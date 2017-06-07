@@ -1,0 +1,162 @@
+header {
+	background: $blue;
+	padding: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+	display: block;
+	text-align: center;
+	width: 40%;
+	margin: 50px auto $space;
+
+    img {
+        width:100%;
+        height:auto;
+    }
+
+	@media all and (max-width: $bp-large) {
+        margin: $space auto;
+	}
+    @media all and (max-width: $bp-small-2) {
+        width: 50%;
+    }
+
+}
+
+#nav-wrap a.logo-mini {
+    display: none;
+    width: 46px;
+    height:35px;
+    position: absolute;
+    top:1.25rem;
+    left:0;
+    overflow:hidden;
+    padding:0;
+    margin:0;
+    z-index:10;
+}
+
+.subnav {
+    height: 0;
+    position: absolute;
+    background: $offwhite;
+    width: 100%;
+    z-index: 1;
+    overflow: auto;
+
+    .show {
+        height: auto;
+    }
+    .wrap{
+        padding: $pad-double 0;
+
+        @media all and (max-width: $bp-small) {
+            padding: 0;
+        }
+    }
+}
+
+.nav-toggle {
+	float: right;
+	display: block;
+	padding: 0.9rem 1rem 0.7rem;
+	font-size: 1.3rem;
+	line-height: 1;
+	border-left: 1px solid #dbdbdb;
+
+	@media all and (min-width: $bp-med) {
+		display: none;
+	}
+}
+
+.search-form {
+
+	@media all and (min-width: $bp-med) {
+		float: right;
+	}
+}
+
+.subhead {
+	text-align: center;
+	padding: $pad*4 0;
+
+    .page & {
+        padding: $pad*8 0;
+    }
+
+    &.stories {
+        background-color: $purple;
+    }
+    &.news {
+        background-color: $red;
+        color: $offwhite;
+    }
+    &.resources {
+        background-color: $gray;
+        color: $offwhite;
+    }
+    &.staff {
+        background-color: $green-dark;
+        color: $offwhite;
+    }
+    &.community {
+        @extend .bg;
+    }
+    &.careers {
+        background-color: $gray-dark;
+        color: $offwhite;
+
+        a {
+            color: $offwhite;
+
+            &:hover {
+                color: $gray-light;
+            }
+        }
+    }
+}
+
+.subsubhead {
+    background-color: #84868D;
+    padding: 12px 0;
+
+    h3 {
+        color: #ffffff;
+        font-size: 16px;
+        letter-spacing: .125em;
+        text-transform: uppercase;
+    }
+}
+
+h2, time {
+    &.stories {
+        color: $purple;
+
+        a &:hover {
+            color: darken($purple, 20%);
+        }
+    }
+    &.news {
+        color: $red;
+
+        a &:hover {
+            color: darken($red, 20%);
+        }
+    }
+    &.resources {
+        color: $gray;
+
+        a &:hover {
+            color: darken($gray, 20%);
+        }
+    }
+    &.staff {
+        color: $green-dark;
+
+        a &:hover {
+            color: darken($green-dark, 20%);
+        }
+    }
+}

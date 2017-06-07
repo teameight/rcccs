@@ -1,0 +1,55 @@
+/*------------------------------------*\
+    $MEDIA ELEMENTS
+\*------------------------------------*/
+
+/* Flexible Media */
+video, object {
+	width:100%;
+	height:auto;
+}
+img {
+	
+	&.alignleft{
+		float:left;
+		margin: 0 $space $space 0;
+	}
+
+	&.alignright{
+		float:right;
+		margin: 0 0 $space $space;
+	}
+
+	&.aligncenter{
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&.attachment-blog-feat{
+		margin-bottom:$space-double;
+	}
+}
+
+.post-list img.attachment-blog-feat {
+	width: 100%;
+	height: auto;
+
+	@media all and (min-width: $bp-small) {
+		width: 45%;
+		float: left;
+		margin: 0 5% 5% 0;
+	}
+}
+
+iframe {
+	margin-bottom: $space;
+}
+
+figure {
+	margin-bottom: $space;
+	img {
+		margin-bottom: $space-quarter;
+	}
+}
+figcaption {
+	font-style: italic;
+}

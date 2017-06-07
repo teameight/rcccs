@@ -1,0 +1,66 @@
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+footer {
+    clear: both;
+    overflow: hidden;
+    background: $gray;
+    color: $offwhite;
+    line-height: 1.2;
+    padding: $pad*4 0;
+
+    .lc {
+        padding: $pad $pad 0;
+    }
+
+    h4 a {
+        color:$offwhite;
+
+        &:hover, &:focus {
+            color: $tan;
+        }
+    }
+
+    .gi:nth-of-type(even) {
+        border-left: 1px solid darken($gray-dark, 5%) !important;
+        
+        @media screen and (max-width: $bp-small) {
+            border-left: none !important;
+            border-bottom: 1px solid darken($gray-dark, 5%);
+        }
+    }
+
+    .contact-links.rt {
+        margin-top: $space*4.5;
+        @media screen and (max-width: $bp-small) {
+            margin-top: 0;
+        }
+    }
+
+}
+
+
+//Footer Nav
+.nav-footer {
+    margin: (-$pad) (-$pad) $space;
+
+    li {
+        border-bottom: 1px solid $gray-dark;
+
+        @media all and (min-width: $bp-med) {
+            border: 0;
+            float: left;
+        }
+    }
+
+    a {
+        display: block;
+        padding: $pad;
+    }
+}
+
+.copyright {
+    @media all and (min-width: $bp-med) {
+        float: right;
+    }
+}

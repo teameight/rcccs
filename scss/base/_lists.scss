@@ -1,0 +1,71 @@
+ol, ul {
+	margin: $space;
+	padding: 0;
+	list-style: none;
+}
+.who-we-are {
+    margin: 0;
+}
+
+/* Definition Lists */
+dl, .side-matter-text {
+	@extend a.more;
+	overflow: hidden;
+	margin: 0;
+	color: lighten($blue, 10%);
+	text-transform: none;
+	float: left;
+	width: 100%;
+    cursor: pointer;
+}
+
+.side-matter-text {
+    float: none;
+}
+.side-matter-note {
+    padding-bottom:$pad;
+}
+.side-matter-ref {
+    color: $blue;
+
+    &:hover {
+        color: lighten($blue, 10%);
+    }
+
+    @media screen and (max-width: $bp-small-2) {
+        color: $gray-dark;
+
+        &:hover {
+            color: $gray-dark;
+        }
+    }
+}
+
+dt {
+	font-weight: bold;
+
+	&:first-child {
+		text-transform: lowercase;
+		border-top: 1px solid lighten($blue, 10%);
+	}
+
+    &:hover, &.hover, &.clicked {
+        color: $blue;
+
+        + dd {
+            visibility: visible;
+        }
+
+        &:first-child {
+            border-top: 1px solid $blue;
+        }
+    }
+}
+
+dd {
+	margin-left: 0;
+	font-weight: 300;
+    visibility: hidden;
+    color: $blue;
+
+}

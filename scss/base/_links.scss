@@ -1,0 +1,135 @@
+/* Links */
+a {
+    color: $gray-dark;
+    text-decoration: none;
+    outline: 0;
+    cursor: pointer;
+
+    &:hover, &:focus {
+        color: $gray;
+    }
+
+    &.more, &.cat {
+        font-size: .7368em;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    &.cat {
+        color: $offwhite;
+        border-radius: 3px;
+        display: inline-block;
+        padding: 6px;
+        float: right;
+        clear: right;
+        font-size: .7em;
+        letter-spacing: 1px;
+        margin-right: 10px;
+
+        &.stories {
+            @include category(stories);
+        }
+        &.news {
+            @include category(news);
+        }
+        &.resources {
+            @include category(resources);
+        }
+        &.staff {
+            @include category(staff);
+        }
+
+        .g1 > & {
+            float: left;
+            clear: left;
+            margin-bottom: $space/2;
+
+            @media all and (max-width: $bp-med) {
+                margin-right: $space/2;
+                clear:none;
+            }
+        }
+    }
+
+    &.more {
+        margin-top: $space-and-half;
+        display: block;
+        float: left;
+    }
+}
+.contact-links a {
+    display: block;
+    float: left;
+    color: $gray;
+    font-weight: 300;
+    width: 100%;
+    margin-bottom: $space;
+
+    &.btn {
+        font-weight: 600;
+    }
+
+    footer & {
+        color: $offwhite;
+
+        &:hover {
+            color: #545658;
+        }
+
+        span {
+            font-size: .8em;
+            padding: $pad/2 0 0 $pad/2;
+        }
+    }
+
+    &:hover {
+        color: #696c6f;
+    }
+
+    &:hover div.icon  {
+        -ms-background-position-y: -34px;
+        background-position-y: -34px;
+    }
+
+    span {
+        display: block;
+        padding: 0.22rem 0 0 $pad/2;
+        float: left;
+    }
+}
+
+.nolink::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $offwhite;
+    margin-bottom: -21px;
+    margin-top: 12px;
+    margin-left: 45px;
+    display: none;
+    transition: margin-top .4s ease-in-out;
+
+    .condensed & {
+        margin-top: -5px;
+    }
+}
+
+.nolink.show::after {
+    @media all and (min-width: $bp-med) {
+        display: block;
+    }
+}
+
+.shrink .nolink::after {
+    margin-top: -5px;
+}
+.about-staff a {
+    font-family: $font-secondary;
+    font-style: italic;
+    -webkit-font-feature-settings: "liga" 0;
+    -moz-font-feature-settings: "liga" 0;
+    font-feature-settings: "liga" 0;
+}

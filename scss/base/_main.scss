@@ -1,0 +1,31 @@
+body {
+	background: $white;
+	font: 19px $font;
+    font-weight:300;
+    line-height:1.2;
+	-webkit-text-size-adjust: 100%;
+	color: $gray-dark;
+    height: 100%;
+
+}
+
+html, .g-half, .gi {
+    height: 100%;
+}
+
+div {
+    position: relative;
+}
+
+#content {
+    //padding-top: 267px;
+    background: $blue;
+}
+
+.M-l {
+    margin-left: 10px;
+}
+
+.M-r {
+    margin-right: 10px;
+}

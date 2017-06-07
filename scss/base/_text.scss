@@ -1,0 +1,57 @@
+/* Text-Related Elements */
+p {
+	margin-bottom: 1.2em;
+    font-weight: 300;
+
+    .post & a {
+        color: #262829;
+        text-decoration: underline;
+
+        &:hover {
+            color: #696c6f;
+        }
+    }
+}
+.post, .page, .service {
+    p {
+        line-height:1.4;
+    }
+}
+
+/* Blockquote */
+blockquote {
+    font-style:italic;
+    border-left: 1px solid $gray;
+    color: $gray;
+	padding-left: $pad;
+	margin-bottom: $space;
+}
+
+/* Horizontal Rule */
+hr {
+	border: 0;
+    height: 1px;
+    background: $gray-light;
+    margin: $space-double 0;
+
+    &.light {
+        background: $offwhite;
+    }
+}
+
+abbr {
+    border-bottom: 1px dotted $gray;
+    cursor: help;
+}
+
+time {
+    font-family: $font-secondary;
+    font-style: italic;
+    font-size: 0.9em;
+    -webkit-font-feature-settings: "liga" 0;
+    -moz-font-feature-settings: "liga" 0;
+    font-feature-settings: "liga" 0;
+}
+.blck-desc p {
+    font-size: 1.25em;
+}

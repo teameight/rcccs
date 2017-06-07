@@ -1,0 +1,410 @@
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+
+form > div {
+    margin-bottom: $space;
+}
+
+form ol, form ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+label {
+    display: block;
+    padding-bottom: $space-quarter;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+
+input, textarea, select {
+    width: 100%;
+    border: 1px solid $yellow;
+    padding: $pad-half 0.65rem;
+    background: $offwhite;
+}
+
+input[type=text], input[type=search], input[type=url], input[type=number], textarea {
+    -webkit-appearance: none;
+    color: #696c6f;
+}
+
+button, input[type="submit"], .directions {
+    padding: $pad-half;
+    background: $gray-dark;
+    border: 1px solid $gray;
+    cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 0.3em;
+}
+
+input[type="search"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+//Form Field Container
+.field-container {
+    margin-bottom: $space;
+}
+
+.inline-form {
+
+    fieldset, .inline-container {
+        position: relative;
+    }
+
+    input[type=submit], button, .btn {
+        font-size: $font-size-slightly-smaller;
+        padding: 0.65rem 1.3rem;
+        background: $gray-dark;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: auto;
+
+        &:hover, &:focus {
+            background: $gray;
+            color: $white;
+        }
+    }
+}
+
+// PK to clean this up
+.inline-search-results-form {
+    width: 100%;
+    @media all and (min-width: $bp-med) {
+        width: 82%;
+
+    }
+
+    fieldset, .inline-container {
+        position: relative;
+    }
+
+    input[type=submit], button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: auto;
+    }
+}
+
+/* Validation */
+.has-error {
+    border-color: $error;
+}
+.is-valid {
+    border-color: $valid;
+}
+
+
+
+
+/*------------------------------------*\
+    $SPECIFIC FORMS
+\*------------------------------------*/
+
+/* Search Form */
+.search-field {
+    padding: .5em;
+    margin: 0 0 .5em 0;
+} 
+.inline-form .search-submit {
+    background: none;
+    padding: 0.78em 1em;
+    border: 0;
+    border-left: 1px solid $gray;
+    color: $gray;
+}
+
+/* Gravity Form - Contact */
+form > div, .gform_fields, .gfield, .gfield_label {
+    float: left;
+}
+
+form > .gform_heading,
+form > .gform_body,
+.wrap .gform_wrapper div.validation_error {
+    padding-left:45px;
+    width: 100%;
+    margin:0;
+
+    @media all and (max-width: $bp-small) {
+        padding-left: 0;
+    }
+}
+
+.wrap .gform_wrapper div.validation_error {
+    font-family:$font-secondary;
+    font-weight:normal;
+    font-size:1em;
+    font-style:italic;
+    -webkit-font-feature-settings: "liga" 0;
+    -moz-font-feature-settings: "liga" 0;
+    font-feature-settings: "liga" 0;
+}
+
+.wrap .gform_wrapper ul.gform_fields {
+    width: 100%;
+}
+
+.wrap .gform_wrapper.rcccs-contact .top_label {
+
+}
+
+.wrap .gform_wrapper .top_label {
+
+    ul.gform_fields {
+      width: 100%;
+    }
+
+    .gfield_description {
+        text-align: right;
+        font-family:$font-secondary;
+        font-style:italic;
+        padding-top:0;
+        margin-top:0;
+        -webkit-font-feature-settings: "liga" 0;
+        -moz-font-feature-settings: "liga" 0;
+        font-feature-settings: "liga" 0;
+
+        &.validation_message {
+            padding:0 !important;
+            margin:0;
+        }
+    }
+
+    .gfield {
+        width: 100%;
+        position: relative;
+    }
+    .gfield_required {
+        color: $offwhite;
+    }
+
+    .gfield_label {
+        padding-top: .35em;
+        font-weight: 300;
+        width: 28%;
+        margin: 0 2% 1rem 0;
+
+        @media all and (max-width: $bp-small-2) {
+            width: 100%;
+            margin:0;
+        }
+
+    }
+
+    input.medium, input[type=text], textarea, select,
+    .ginput_complex .ginput_full input[type=text] {
+        padding:$pad/2;
+        font-size: .8em;
+        width: 100% !important;
+        color:$gray-dark;
+   }
+    .ginput_complex .ginput_left input[type=text],
+    .ginput_complex .ginput_right input[type=text] {
+        padding:$pad/2;
+        font-size: .8em;
+   }
+
+    .ginput_container {
+        float: right;
+        width: 70%;
+        margin-bottom: 1em;
+
+        @media all and (max-width: $bp-small-2) {
+            width: 100%;
+        }
+
+        .gfield:last-child & {
+            width: 100%;
+            background: $offwhite;
+        }
+    }
+
+    .gfield_date_month,
+    .gfield_date_day,
+    .gfield_date_year {
+        width: 21% !important;
+        margin-right: 2%;
+        float: left;
+
+        @media all and (max-width: $bp-small-2) {
+            margin-right:3%;
+        }
+
+    }
+
+
+    ul.gfield_radio,
+    ul.gfield_checkbox {
+
+        width:100%;
+        padding-top: .45em;
+
+        li {
+            width: 50%;
+
+            @media all and (max-width: $bp-small-2) {
+                width:100%;
+            }
+
+            label {
+                margin:0;
+                font-weight: 300;
+                font-size:.9em;
+            }
+
+            input[type="radio"]:checked+label,
+            input[type="checkbox"]:checked+label {
+                font-weight: 500;
+            }
+
+            input[type=text]{
+                margin:0;
+                width: 70% !important;
+            }
+        }
+    }
+
+    .gfield_radio li input[type=radio], 
+    .gfield_checkbox li input[type=checkbox] {
+        margin: .25rem .5rem 0 .05rem;
+    }
+
+}
+
+.gform_wrapper form .gform_footer {
+    padding:0 0 0 45px;
+    margin:0;
+    width: 100%;
+
+    input {
+        float:right;
+        font-weight: 300;
+    }
+}
+
+.gsection {
+    border-bottom: 1px dotted $gray;
+    margin: $space 0;
+}
+
+.gfield_date .ginput_container {
+    width: 15%;
+    float: left;
+    margin-right: 2em;
+
+    &.gfield_date_year {
+        width: 25%;
+        margin-right: 0;
+    }
+}
+
+.gfield_radio, .gfield_checkbox {
+    display: inline-block;
+
+    li {
+        display: inline-block;
+
+        input, label {
+            float: left;
+            width: auto;
+            margin-right: $space;
+        }
+    }
+}
+
+.ginput_left {
+    width: 48%;
+    float: left;
+}
+
+.ginput_right {
+    width: 48%;
+    float: right;
+}
+
+.ginput_container select {
+    -webkit-appearance: none;-moz-webkit-appearance: none;-ms-webkit-appearance: none;-o-webkit-appearance: none;webkit-appearance: none;
+    width: 40%;
+    padding-right: $pad;
+    background-image: url('../images/select-arrow.png');
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    border-radius: 0;
+}
+
+.wrap {
+    .gform_wrapper li.gfield.gfield_error,
+    .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+        background-color: $valid-lt;
+        margin-bottom: 6px !important;
+        padding: 6px 6px 4px 6px !important;
+        border-top: 1px solid #C89797;
+        border-bottom: 1px solid #C89797;
+    }
+
+
+}
+
+
+.validation_message {
+    color: $valid;
+    font-size: .75em;
+    font-family: $font-secondary;
+    font-style: italic;
+    -webkit-font-feature-settings: "liga" 0;
+    -moz-font-feature-settings: "liga" 0;
+    font-feature-settings: "liga" 0;
+}
+
+#recaptcha_widget_div {
+
+    font-size:16px;
+
+    .recaptcha_area {
+
+        img {
+            //width: auto;
+            //height: auto;
+        }
+    }
+
+}
+
+.captcha {
+    label {
+        display: none;
+    }
+
+    .ginput_container {
+        width: 100% !important;
+    }
+}
+
+

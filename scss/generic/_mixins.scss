@@ -1,0 +1,54 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+/* CSS Transition
+	Usage: @include transition(width,0.3s,ease-out);
+ */
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+}
+
+/* Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback  
+	Usage: @include font-size(1, large);
+*/
+@mixin font-size( $decimal-size, $keyword: null ) {
+  @if $keyword{ font-size: $keyword; }
+  @else { font-size: $decimal-size * $base-font-multiplier * 16px;}
+  font-size: $decimal-size * 1rem;
+}
+
+/* Category Colors */
+@mixin category( $cat ) {
+	@if $cat == stories {
+		background-color: $purple;
+		&:hover {
+			background-color: darken($purple, 10%);
+		}
+	} @else if $cat == news {
+		background-color: $red;
+		&:hover {
+			background-color: darken($red, 10%);
+		}
+	} @else if $cat == resources {
+		background-color: $gray;
+		&:hover {
+			background-color: darken($gray, 10%);
+		}
+	} @else if $cat == staff {
+		background-color: $green-dark;
+		&:hover {
+			background-color: darken($green-dark, 10%);
+		}
+	}
+}
+
+@mixin calc($property, $expression) {
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}

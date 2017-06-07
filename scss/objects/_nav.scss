@@ -1,0 +1,100 @@
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+
+.nav {
+	clear: none;
+	max-height: none;
+	border-top: 1px solid #c7cecf;
+	text-align: center;
+    position:relative;
+    padding-bottom:15px;
+
+    .current-menu-item a, .current-menu-parent a {
+        color: $gray-dark;
+    }
+
+    a {
+		display: block;
+		padding: $pad;
+		color: $offwhite;
+		text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 2px;
+
+		&:hover, &:active {
+			color: $gray-dark;
+		}
+
+        @media screen and (max-width: $bp-small-2) {
+             padding: $pad $pad/2;
+             font-weight:600;
+       }
+        @media screen and (max-width: $bp-small) {
+            padding: .52em;
+            font-size: 10px;
+        }
+	}
+
+	&.active {
+		max-height: 40em;
+	}
+
+	ul {
+		display: inline-block;
+		text-align: center;
+		margin: $space 0 0;
+
+		li {
+			float: left;
+		}
+
+		a {
+			border: 0;
+		}
+
+    }    
+
+    @media screen and (max-width: $bp-small) {
+
+		text-align:center;
+        padding-bottom: 0;
+
+		ul {
+			padding: 0;
+            margin: .5rem 0;
+		}
+
+		li {
+			text-align: center;
+			margin: 0;
+			width: auto;
+		}
+
+	}
+}
+
+
+//Pagination
+.pagination {
+	overflow: hidden;
+    margin:0;
+
+	li {
+		float: left;
+		@extend a.more;
+		// border-right: 1px solid $gray-light-2;
+
+		&.label {
+			margin-right: $space;
+		}
+	}
+
+	a {
+		padding: $pad/4;
+	}
+
+    span.current {
+        color: black;
+    }
+}
